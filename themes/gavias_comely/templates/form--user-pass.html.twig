@@ -1,0 +1,32 @@
+<div id="login" class="ptb ptb-xs-60 page-signin form-register">
+<div class="container">
+  <div class="row">
+    <div class="main-body">
+      <div class="body-inner">
+        <div class="card bg-white">
+          <div class="card-content">
+            <section class="logo text-center">
+            </section>
+            <form {{ attributes }}>
+            <p class="description">Điền địa chỉ Email của bạn và chúng tôi sẽ gửi thư hướng dẫn bạn đặt lại mật khẩu.</p>
+              <h2>Đặt lại Mật khẩu</h2>
+
+              <fieldset>
+                
+                <div class="form-group col-6">
+                    <div class="ui-input-group">
+                        {{ element.name }}
+                    </div>
+                </div>
+                {{ element.actions.submit }}
+              </fieldset>
+              </div>
+             {{ element.form_build_id }} {# required #}
+             {{ element.form_id }} {# required #}
+            </form>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

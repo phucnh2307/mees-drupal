@@ -1,0 +1,109 @@
+{%
+  set classes = [
+    'node',
+    'node-detail',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+
+<!-- Start Display article for teaser page -->
+{% if teaser == true %} 
+  <div class="post-block">
+    <div class="post-image">
+      {% if post_format == 'video' or post_format == 'audio' and gva_iframe %}
+        {{ gva_iframe|raw }}
+      {% elseif post_format == 'gallery' and content.field_post_gallery %}
+        {{ content.field_post_gallery }}
+      {% else %}
+        {{ content.field_image }}
+      {% endif %} 
+    </div>
+    <div class="post-content text-left">
+      <div class="post-title"> <a href="{{ url }}" rel="bookmark">{{ label }}</a> </div>            
+        <div class="post-meta">
+          <span class="post-categories">{{ content.field_post_category }}</span> -
+          <span class="post-created">{{ date }} </span>
+        </div>
+       <div class="post-body">
+          {{ content.body }}
+       </div>
+    </div>
+  </div>
+
+<!-- End Display article for teaser page -->
+{% else %}
+<!-- Start Display article for detail page -->
+
+<article{{ attributes.addClass(classes) }}>
+  <div class="post-block">
+    <div class="post-content">
+      {{ title_prefix }}
+         <h1{{ title_attributes.addClass('post-title') }}>{{ label }}</h1>
+      {{ title_suffix }}         
+      <div class="post-meta">
+        <span class="post-categories">{{ node.getOwner.field_ho_va_ten.value}} </span> |
+        <span class="post-created"> {{node_view_count}} lượt xem </span> |
+        <span class="post-created"> {{date |date('d/m/Y')}} </span> |
+        <span class="post-comment"> 
+          {{ comment_count }} bình luận
+        </span>
+      </div>
+    <div class="post-thumbnail post-{{ post_format }}">
+      {% if post_format == 'video' or post_format == 'audio' and gva_iframe %}
+        {{ gva_iframe|raw }}
+      {% elseif post_format == 'gallery' and content.field_post_gallery %}
+        {{ content.field_post_gallery }}
+      {% else %}
+        {{ content.field_image }}
+      {% endif %}  
+    </div>
+
+    
+      
+      {% if display_submitted %}
+        <div class="node__meta hidden">
+          {{ author_picture }}
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date |date('d/m/Y')}}{% endtrans %}
+          </span>
+          {{ metadata }}
+        </div>
+      {% endif %}
+
+      <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+        {{ content.body | raw }}
+        {% if is_login %}
+          {{content.field_body_2|raw}}
+        {% else %}
+          <div class="modal-login-body"> 
+            <h4>Đọc tiếp bài viết miễn phí</h4>
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+            </p>
+            <a href="/user/login" class="btn btn-body-login">Đăng nhập</a>
+            <a href="/user/register" class="btn btn-body-register">Đăng ký</a>
+            <a href="#"  class="btn btn-body-share">Chia sẻ lên Facebook</a>
+          </div>
+        {% endif %}
+        {{content.field_tags}}
+      </div>
+
+
+      <div id="node-single-comment">
+        <h4>{{ comment_count }} Bình luận </h4>
+        {{ content.comment }}
+      </div>
+
+    </div>
+
+  </div>
+
+</article>
+
+<!-- End Display article for detail page -->
+{% endif %}

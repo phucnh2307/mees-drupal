@@ -1,0 +1,22 @@
+@import 'vars/_variables';
+ 
+// images folder path of theme 
+$base-theme-image-path : '../images'!default;
+
+//------- FONTS
+$fa-font-path							: "../fonts/" !default;
+$font-icon 								: "FontAwesome"!default;
+$font-icon-2                     : "gva-icon"!default;
+$font-second                     : 'avenir_next', sans-serif !default;
+//-------- COLOR --------------
+$black 			 					   : #000 !default; 
+$white                           : #fff !default;  
+$nocolor                         : transparent !default;
+//--------- COLORS  
+//1. 1DA5DF(blue) //2. 00A950(green) //3. 7383BE(lilac) //4. 00B5E4(blue_second) //5. 00E8C7(green_second) // 6. default //7. 91a8d0(blue_three) //8. FFBA0D(yellow) //9.cb1313(red)
+$theme-color                      : #3B55E6!default; 
+$theme-color-rgba					    : rgba(254, 184, 0, 0.8)!default; 
+$theme-color-second               : #2A3039 !default;
+$theme-color-three                : #F49626 !default;
+$border-color-dark                : rgba(255, 255, 255, 0.1)!default; 
+$border-color                     : rgba(0, 0, 0, 0.1)!default;

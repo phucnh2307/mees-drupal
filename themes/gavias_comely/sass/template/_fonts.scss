@@ -1,0 +1,30 @@
+$theme-font-path : "../fonts/"!default;
+@font-face { 
+  font-family: 'avenir_next'; 
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Regular.eot') format('eot'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Regular.woff') format('woff'), 
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Regular.ttf') format('truetype'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg'); 
+}
+
+@font-face { 
+  font-family: 'avenir_next'; 
+  font-style: normal;
+  font-weight: 600;
+  src: url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Demi.eot') format('eot'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Demi.woff') format('woff'), 
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Demi.ttf') format('truetype'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Demi.svg#AvenirNextLTPro-Demi') format('svg'); 
+}
+
+@font-face { 
+  font-family: 'avenir_next'; 
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Bold.eot') format('eot'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Bold.woff') format('woff'), 
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Bold.ttf') format('truetype'),
+    url('#{$theme-font-path}avenir_next/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold') format('svg'); 
+}

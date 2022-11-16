@@ -1,0 +1,314 @@
+.team-block{
+  .team-image{
+    position: relative;
+    text-align: center;
+    .team-email{
+      position: absolute;
+      bottom: -20px;
+      left: 30px;
+      right: 30px;
+      text-align: center;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: $white;
+      @include transition(all 0.35s);
+      @include opacity(0);
+      z-index: 9;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include size(100%, 100%);
+      background: rgba(0, 0, 0, 0.3);
+      @include opacity(0);
+      @include scale(0);
+      z-index: 1;
+      @include transition(all 0.35s);
+    }
+  }
+  .team-name{
+    font-weight: 600;
+    color: $black;
+    margin-top: 20px;
+    line-height: 24px;
+  }
+  .team-job{
+    font-size: 12px;
+    color: #999999;
+  }
+  .socials{
+    margin-top: 10px;
+  }
+  &:hover{
+    .team-image{
+      &:after{
+        @include opacity(1);
+        @include scale(1);
+      }
+    }
+    .team-email{
+      bottom: 30px;
+      @include opacity(1);
+    }
+  }  
+}
+
+.team-carousel{
+  .owl-carousel{
+    margin: 0!important;
+    .item{
+      padding: 0!important;
+    }
+    .owl-prev{
+      left: 15px!important;
+    }
+    .owl-next{
+      right: 15px!important;
+    }
+  }
+  .team-block{
+    position: relative;
+    .team-email{
+      display: none;
+    }
+    .team-image{
+      &:after{
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .team-content{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+      padding: 30px 30px 20px;
+      @include opacity(0);
+      @media(max-width: $screen-xs-max){
+        padding: 20px;
+      }
+      .team-name{
+        margin: 0;
+        a{
+          color: $white;
+          font-size: 18px;
+          font-weight: 500;
+          &:hover, &:active, &:focus{
+            color: $theme-color;
+          }
+        }
+      }
+      .team-job{
+        color: $white;
+      }
+      .socials{
+        margin-top: 0!important;
+        a{
+          margin-right: 0!important;
+          i{
+            background: none!important;
+            color: $white;
+            width: 24px;
+            height: 24px;
+            font-size: 13px;
+          }
+          &:hover, &:active, &:focus{
+            color: $theme-color;
+            @include opacity(1);
+            i{
+              color: $theme-color;
+            }
+          }
+        }
+      }
+    }
+    &:hover, &:active, &:focus{
+      .team-content{
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+.team-grid{
+  .team-block{
+    margin-bottom: 30px;
+  }
+}
+
+.team-grid-2{
+  .team-block{
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 1;
+    @include border-radius(5px);
+    overflow: hidden;
+    .team-email{
+      display: none;
+    }
+    .team-content{
+      width: 100%;
+      z-index: 99;
+      padding: 15px 20px;
+      @include transition(all 0.35s);
+      background: #F9F9F9;
+      text-align: center;
+      .socials{
+        display: none;
+      }
+      .team-name{
+        margin-top: 0;
+        position: relative;
+        z-index: 9;
+        a{
+          font-weight: 600;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+      .team-job{
+        position: relative;
+        z-index: 9;
+        font-size: 12px;
+      }
+    }
+    &:hover, &:focus, &:active{
+      .team-content{
+        background: #222;
+        .team-name, .team-name a{
+          color: $white;
+        }
+        .team-job{
+          color: $white;
+        }
+      }
+    }
+  }
+  .views-row{
+    &:last-child{
+      .team-block{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.team-list{
+  .team-block{
+    .team-image{
+      width: 35%;
+      float: left;
+    }
+    .team-content{
+      padding-left: 30px;
+      width: 65%;
+      float: left;
+      .team-body{
+        display: block!important;
+        visibility: visible!important;
+        padding: 10px 0;
+      }
+    }
+  }
+}
+
+.team-single-page{
+  .team-name{
+    margin-bottom: 30px;
+    .name{
+      font-size: 30px;
+      font-weight: 600;
+      color: $black;
+      line-height: 42px;
+    }
+    .job{
+      font-size: 12px;
+      color: #999999;
+    }
+    .line{
+      text-align: center;
+      float: left;
+      span{
+        @include size(30px, 5px);
+        @include border-radius(10px);
+        display: inline-block;
+        margin: 0 5px;
+        &.one{
+          background: #5EB4E7;
+          margin-left: 0;
+        }
+        &.second{
+          background: #F8C44F;
+        }
+        &.three{
+          background: #F49626;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .socials{
+    margin-top: 10px;
+  }
+  .heading{
+    font-size: 18px;
+    font-weight: 600;
+    color: $black;
+  }
+  .team-contact{
+    margin-bottom: 25px;
+  }
+  .team-contact, .team-education{
+    .content-inner{
+      color: #999999;
+      font-size: 13px;
+      line-height: 28px;
+    }
+  }
+  .team-education{
+    .field__item{
+      padding-left: 20px;
+      position: relative;
+      &:after{
+        content: "";
+        @include size(6px, 6px);
+        background: $theme-color;
+        position: absolute;
+        top: 13px;
+        left: 0;
+        @include border-radius(50%);
+        z-index: 1;
+      }
+    }
+  }
+  .team-info{
+    margin-bottom: 30px!important;
+  }
+  .team-quote{
+    font-size: 16px;
+    color: #999999;
+    margin-top: 20px;
+    padding-left: 50px;
+    position: relative;
+    &:after{
+      font-family: "FontAwesome";
+      content: "\f10d";
+      left: 0;
+      top: 0;
+      position: absolute;
+      z-index: 1;
+      color: $theme-color;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+}

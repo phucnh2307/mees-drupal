@@ -1,0 +1,97 @@
+<header id="header" class="header-v1">
+  
+  {% if page.topbar %}
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-sm-6">
+              <div class="topbar-content">{{ page.topbar }}</div> 
+            </div>
+            <div class="col-lg-6 col-sm-6">
+              <div class="text-right">
+               
+              </div>
+            </div>
+          </div>   
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% set class_sticky = '' %}
+  {% if sticky_menu == 1 %}
+    {% set class_sticky = 'gv-sticky-menu' %}
+  {% endif %}  
+
+   <div class="header-main {{ class_sticky }}">
+      <div class="header-content-layout">
+         <div class="header-main-inner p-relative">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-8 branding">
+                {% if page.branding %}
+                  {{ page.branding }}
+                {% endif %}
+              </div>
+            
+              <div class="col-md-8 col-sm-6 col-xs-4 p-static">
+                <div class="header-inner clearfix">
+                  <div class="main-menu">
+                    <div class="area-main-menu">
+                      <div class="area-inner">
+                          <div class="gva-offcanvas-mobile">
+                            <div class="close-offcanvas hidden"><i class="fa fa-times"></i></div>
+                            <div class="container">
+                              {% if page.main_menu %}
+                                {{ page.main_menu }}
+                              {% endif %}  
+                            </div>
+                            {% if page.offcanvas %}
+                              <div class="after-offcanvas hidden">
+                                {{ page.offcanvas }}
+                              </div>
+                           {% endif %}
+                           
+                          </div>
+
+                          <div id="menu-bar" class="menu-bar hidden-lg hidden-md">
+                            <span class="one"></span>
+                            <span class="two"></span>
+                            <span class="three"></span>
+                          </div>
+                        
+                        {% if page.search %}
+                        
+                          <div class="gva-search-region search-region">
+                            {# {% if is_login %}
+                              <a style="margin-right: 5px; font-size: 12px; color: white;" href="#">{{ current_user }}</a>  <a style="color: white;">|</a>  <a style="margin-left: 5px; margin-right: 10px; font-size: 12px; color: white;" href="/user/logout">Subcribe</a>
+                            {% else %}
+                              <a style="margin-right: 5px; font-size: 12px; color: white;" href="/user/login">Login</a>
+                            {% endif %} #}
+                           <a style="margin-left: 5px;
+                           margin-right: 10px;
+                           font-size: 12px;
+                           padding: 10px;
+                           background: #F6E442;
+                           color: black;
+                           border-radius: 4px;
+                           font-weight: 600;" href="http://mees.cf/mees-exp">Subcribe</a>
+                            <span class="icon"> <img src="http://mees.cf/gavias_comely/sites/default/files/gbb-uploads/customize_mees/icon-user.png"><i class="fa fa-search"></i></span>
+                            <div class="search-content">  
+                              {{ page.search }}
+                            </div>  
+                          </div>
+                        {% endif %}
+                       
+                      </div>
+                    </div>
+                  </div>  
+                </div> 
+              </div>
+
+            </div>
+         </div>
+      </div>
+   </div>
+
+</header>
