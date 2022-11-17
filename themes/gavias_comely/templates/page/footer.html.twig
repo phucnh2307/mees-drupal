@@ -21,8 +21,8 @@
       </div> 
      {% endif %}
      
-     <div class="footer-center" style="background: #305496">
-        <div class="container">      
+     <div class="footer-center" style="background: #305496; padding: 20px;">
+        {# <div class="container">       #}
            <div class="row">
               {% if page.footer_first %}
                 <div class="footer-first col-lg-{{ footer_first_size }} col-md-{{ footer_first_size }} col-sm-12 col-xs-12 column">
@@ -48,18 +48,17 @@
                 </div> 
               {% endif %}
            </div>   
-        </div>
+        {# </div> #}
     </div>  
   </div>   
 
   {% if page.copyright %}
-    <div class="copyright">
-      <div class="container">
+    <div class="copyright" style="padding: 20px;">
+      {# <div class="container"> #}
         <div class="copyright-inner">
             {{ page.copyright }}
-        </div>   
-      </div>   
-    </div>
+        </div>    
+    {# </div> #}
   {% endif %}
  
 </footer>
