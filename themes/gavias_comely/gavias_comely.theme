@@ -57,7 +57,13 @@ function gavias_comely_preprocess_page(&$variables) {
   $variables['login_link'] = Url::fromRoute('user.login')->toString();
   $variables['register_link'] = Url::fromRoute('user.register')->toString();
 
-  
+  $variables['taxonomy_article'] = getTaxonomyByVid('category');
+  $variables['taxonomy_bookcase'] = getTaxonomyByVid('categories_bookcase');
+  $variables['taxonomy_wordbench'] = getTaxonomyByVid('categories_wordbench');
+  global $base_url;
+  $theme_path = drupal_get_path('theme', 'gavias_comely');
+  $variables['theme_path'] = $base_url . '/' . $theme_path;
+  $variables['base_url'] = $base_url;
 
 }
 
@@ -382,4 +388,15 @@ function gavias_comely_theme_suggestions_alter(array &$suggestions, array $varia
 if ($hook == 'form' & !empty($variables['element']['#id'])) {
  $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']  ['#id']);
 }
+}
+
+function getTaxonomyByVid($vid){
+  $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+  foreach ($terms as $term) {
+  $term_data[] = array(
+    'id' => $term->tid,
+    'name' => $term->name
+  );
+  }
+  return $term_data;
 }
