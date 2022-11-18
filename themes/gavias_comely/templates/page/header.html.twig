@@ -47,7 +47,18 @@
                             <div class="close-offcanvas hidden"><i class="fa fa-times"></i></div>
                             <div class="container">
                               {% if page.main_menu %}
-                                {{ page.main_menu }}
+                                {% if page.sidebar_left_article %}
+                                  <form action="/search-blog">
+                                    <input type="text" name="title" placeholder="Tìm kiếm" style="margin-top: 20px;
+                                    width: 650px;">
+                                    <button type="submit" style="    margin-left: -50px;
+                                    background: none;
+                                    border: none;"><img src="{{theme_path}}/Seach.png" alt=""></button>
+                                  </form>
+                                {% else %}
+                                  {{ page.main_menu }}
+                                {% endif %}
+                                
                               {% endif %}  
                             </div>
                             {% if page.offcanvas %}
