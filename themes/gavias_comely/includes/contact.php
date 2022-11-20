@@ -110,7 +110,7 @@ function gavias_comely_form_contact_message_form_service_form_alter(&$form, \Dru
    
   // Name
   $form['name']['#weight'] = -1;
-  $form['name']['#prefix'] = '<div class="form-service"><div class="row"><div class="col-sm-6 col-xs-12"><div class="form-group">';
+  $form['name']['#prefix'] = '<div class="form-service"><div class="row"><div class="flex" ><div><div class="col-sm-12 col-xs-12"><div class="form-group">';
   $form['name']['#suffix'] = '</div></div>';
   $form['name']['#attributes']['placeholder'][] = $form['name']['#title'].'*';
   $form['name']['#attributes']['class'][] = 'form-control';
@@ -118,7 +118,7 @@ function gavias_comely_form_contact_message_form_service_form_alter(&$form, \Dru
 
   // Mail
   $form['mail']['#weight'] = -2;
-  $form['mail']['#prefix'] = '<div class="col-sm-6 col-xs-12"><div class="form-group">';
+  $form['mail']['#prefix'] = '<div class="col-sm-12 col-xs-12"><div class="form-group">';
   $form['mail']['#suffix'] = '</div></div></div>';
   $form['mail']['#attributes']['placeholder'][] = $form['mail']['#title'].'*';
   $form['mail']['#attributes']['class'][] = 'form-control';
@@ -134,7 +134,7 @@ function gavias_comely_form_contact_message_form_service_form_alter(&$form, \Dru
   
   // Phone
   $form['field_phone']['widget'][0]['#weight'] = -2;
-  $form['field_phone']['widget'][0]['#prefix'] = '<div class="col-sm-6 col-xs-12"><div class="form-group">';
+  $form['field_phone']['widget'][0]['#prefix'] = '<div class="col-sm-12 col-xs-12"><div class="form-group">';
   $form['field_phone']['widget'][0]['#suffix'] = '</div></div>';
   $form['field_phone']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
   $form['field_phone']['widget'][0]['value']['#attributes']['placeholder'][] = $form['field_phone']['widget'][0]['#title'];
@@ -143,18 +143,28 @@ function gavias_comely_form_contact_message_form_service_form_alter(&$form, \Dru
   // Message
   $form['message']['#weight'] = -5;
   $form['message']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
-  //$form['message']['widget'][0]['value']['#attributes']['placeholder'][] = $form['message']['widget'][0]['#title'].'*';
+  $form['message']['widget'][0]['value']['#attributes']['placeholder'][] = $form['message']['widget'][0]['#title'].'*';
   $form['message']['widget'][0]['#title'] = '';
   unset($form['message']['widget'][0]['value']['#title']);
-  $form['message']['widget'][0]['#prefix'] = '<div class="clearfix"><div class="form-group">';
+  $form['message']['widget'][0]['#prefix'] = '<div class="clearfix col-sm-12 col-xs-12"><div class="form-group">';
   $form['message']['widget'][0]['#suffix'] = '</div></div>';
+
+  //recaptcha
+  $form['captcha']['#weight'] = 3;
+  $form['captcha']['widget'][0]['#prefix'] = '<div class="col-sm-12 col-xs-12">';
+  // policy
+  $form['field_policy']['widget'][0]['#weight'] = 4;
+  $form['field_policy']['widget']['#prefix'] = '<div class="col-sm-12 col-xs-12"><div class="form-group">';
+  $form['field_policy']['widget']['#suffix'] = '</div></div>';
+  $form['field_policy']['widget'][0]['value']['#attributes']['class'][] = 'form-control';
+  unset($form['field_policy']['widget']['#title']);
 
   // Submit
   $form['actions']['#weight'] = 49;
-  $form['actions']['#prefix'] = '<div class="clearfix">';
-  $form['actions']['#suffix'] = '</div></div>';
+  $form['actions']['#prefix'] = '<div class="clearfix col-sm-12 col-xs-12">';
+  $form['actions']['#suffix'] = '</div></div></div></div>';
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
-  $form['actions']['submit']['#attributes']['class'][] = 'btn-theme-submit';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-theme-submit col-sm-12';
   
   
 }
