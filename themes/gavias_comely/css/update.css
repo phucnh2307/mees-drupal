@@ -1421,6 +1421,27 @@ margin-top: 20px;
   font-weight: none !important;
   color:  #3B3B3B;
 }
+ul.tabs.nav-tabs.primary.drupal-tabs {
+  display: none;
+}
+#user-login-form, #user-register-form, #user-pass {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+.password-strength__meter {
+  display: none;
+}
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: none;
+}
 .node--type-wordbench .block-views-blockwordbench-block-2 .post-style-list.small .post-title {
   padding: 0;
   font-size: 14px;
