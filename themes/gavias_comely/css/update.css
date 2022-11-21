@@ -1687,7 +1687,15 @@ body {
 #sidebar-container .list-group a {
   height: 50px;
 }
-
+#sidebar-container.sidebar-expanded .list-group .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start {
+  height: 50px;
+}
+#sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start:hover, #sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start.active{
+  background: #fff;
+}
+#sidebar-container .active{
+  font-weight: 700;
+}
 /* Submenu item*/
 #sidebar-container .list-group .sidebar-submenu a {
   height: 45px;

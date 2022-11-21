@@ -11517,3 +11517,19 @@ div.resizable-textarea textarea {
 .gavias_customize_form .form-group.action input#gavias_customize_reset {
   background: #f0ad4e;
 }
+.path-user .breadcrumb-content-inner .gva-breadcrumb-content .gva-block-breadcrumb .breadcrumb-style{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.path-user .breadcrumb-content-inner .gva-breadcrumb-content .page-title{
+  display: none;
+}
+.path-user .block.block-system-breadcrumb-block{
+  margin-bottom: 0;
+}
+.path-user #user-login-form, #user-register-form, #user-pass{
+  padding-top: 0;
+  margin-top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}
