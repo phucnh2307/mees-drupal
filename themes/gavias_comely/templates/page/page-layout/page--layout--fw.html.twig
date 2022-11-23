@@ -17,19 +17,25 @@
 		{% endif %}
 		<div class="flex">
 			{% if page.sidebar_left_article %}
+				<style>
+					#sidebar-container{
+						display: block;
+					}
+				</style>
+			{% endif %}
 				<div class="row" id="body-row">
-					<div id="sidebar-container" class="sidebar-expanded d-md-block">
+					<div id="sidebar-container" class="sidebar-collapsed d-md-block">
 						<ul class="list-group">
-							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">
 							</li>
 							<div href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/article' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Files.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/article">Articles</a></span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
 							</div>
-							<div id='submenu1' class="collapse sidebar-submenu">
+							<div id='submenu1' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_article %}
 									<a href="{{base_url}}/article?category={{item.id}}" class="list-group-item list-group-item-action  {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
@@ -41,10 +47,10 @@
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Books.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/bookcase">Bookcase</a></span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
 							</div>
-							<div id='submenu5' class="collapse sidebar-submenu">
+							<div id='submenu5' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_bookcase %}
 									<a href="{{base_url}}/bookcase?category={{item.id}}" class="list-group-item list-group-item-action {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
@@ -56,10 +62,10 @@
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/ChalkboardTeacher.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/wordbench">Wordbench</a></span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
 							</div>
-							<div id='submenu2' class="collapse sidebar-submenu">
+							<div id='submenu2' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_wordbench %}
 									<a href="{{base_url}}/wordbench?category={{item.id}}" class="list-group-item list-group-item-action {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
@@ -79,10 +85,10 @@
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Star.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8">About Us</span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
 							</a>
-							<div id='submenu4' class="collapse sidebar-submenu">
+							<div id='submenu4' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_wordbench %}
 									<a href="{{base_url}}/article?category={{item.id}}" class="list-group-item list-group-item-action ">
 										<span class="menu-collapsed">{{item.name}}</span>
@@ -91,7 +97,7 @@
 							</div>
 						</ul>
 						<ul class="list-group">
-							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">NETWORK SITES
+							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">NETWORK SITES
 							</li>
 							<a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/courses' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
@@ -108,7 +114,6 @@
 						</ul>
 					</div>
 				</div>
-			{% endif %}
 			<div style="width:100%">
 				<div role="main" class="main main-page">
 				

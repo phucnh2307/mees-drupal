@@ -1681,6 +1681,7 @@ body {
 }
 .sidebar-collapsed {
   width: 100px;
+  display: none;
 }
 
 /* Menu item*/
