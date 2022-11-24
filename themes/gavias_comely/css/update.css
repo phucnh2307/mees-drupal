@@ -2269,3 +2269,106 @@ margin-top: 20px;
 .node--type-bookcase .sidebar-left-bookcase-detail-chuong table{
   border-radius: 13px 13px 0 0 !important;
 }
+
+/* Đăng ký khóa học */
+#contact-message-form-register-course-form #edit-field-option--wrapper{
+  margin-left: 25px;
+  margin-bottom: 0;
+}
+#contact-message-form-register-course-form #edit-field-option--wrapper legend{
+  display: none;
+}
+#contact-message-form-register-course-form #edit-field-option{
+  display: flex;
+  gap: 20px;
+}
+#contact-message-form-register-course-form #edit-field-option>div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #375591;
+}
+#contact-message-form-register-course-form #edit-field-option .form-item label,#contact-message-form-register-course-form #edit-field-option .form-item{
+  margin-bottom: 0;
+}
+#contact-message-form-register-course-form #edit-field-option input[type="radio"]{
+  margin-top: 0;
+}
+#contact-message-form-register-course-form .description{
+  margin-bottom: 30px;
+}
+#contact-message-form-register-course-form .description a{
+  color: #FF6A47;
+  text-decoration: underline;
+}
+#contact-message-form-register-course-form .dang-ky-khoa-hoc{
+  max-width: 300px;
+  width: 100%;
+}
+#contact-message-form-register-course-form .dang-ky-khoa-hoc h4{
+  font-weight: 700;
+  font-size: 20px;
+  color: #375591;
+}
+#contact-message-form-register-course-form .dang-ky-khoa-hoc .js-form-item label{
+  font-weight: 600;
+  font-size: 16px;
+  color: #375591;
+  text-transform: none;
+}
+#contact-message-form-register-course-form .dang-ky-khoa-hoc .js-form-item label span{
+  color: #E53E17;
+}
+#contact-message-form-register-course-form .dang-ky-khoa-hoc input{
+  border-radius: 5px;
+  border: 1px #4BAFEA solid;
+}
+#contact-message-form-register-course-form .chinh-sach legend{
+  display: none;
+}
+#contact-message-form-register-course-form .chinh-sach .js-form-type-checkbox{
+  display: flex;
+  gap: 5px;
+}
+#contact-message-form-register-course-form .chinh-sach .js-form-type-checkbox input{
+  margin-top: 0;
+}
+#contact-message-form-register-course-form .chinh-sach .js-form-type-checkbox label{
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4B4B4B;
+  text-transform: none;
+}
+#contact-message-form-register-course-form .chinh-sach .js-form-type-checkbox label a{
+  color: #4BAFEA;
+}
+#contact-message-form-register-course-form .chinh-sach .form-item{
+  margin-bottom: 0;
+}
+#contact-message-form-register-course-form #edit-submit{
+  align-items: center;
+  padding: 12px 60px;
+  background: #FF6A47;
+  border-radius: 2px;
+  border-color: #FF6A47;
+}
+#contact-message-form-register-course-form #edit-submit:hover{
+  background: none;
+  color: #FF6A47;
+}
+.dang-ky-khoa-hoc-page .breadcrumb-content-inner .page-title{
+  display: none;
+}
+.dang-ky-khoa-hoc-page .breadcrumb-content-inner .breadcrumb-style{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.dang-ky-khoa-hoc-page .title-course{
+  margin-bottom: 0;
+}
+.dang-ky-khoa-hoc-page .title-course .box-content>p{
+  margin-bottom: 0;
+}

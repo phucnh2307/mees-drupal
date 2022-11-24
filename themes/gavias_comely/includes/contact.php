@@ -237,3 +237,18 @@ function gavias_comely_form_contact_message_book_form_form_alter(&$form, \Drupal
   $form['subject']['#access'] = FALSE;
   $form['subject']['#required'] = FALSE;
 }
+
+// register course form
+function gavias_comely_form_contact_message_form_register_course_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  $form['field_email']['widget'][0]['value']['#attributes']['placeholder'][] ='Email';
+  $form['field_phone']['widget'][0]['value']['#attributes']['placeholder'][] ='Số điện thoại của bạn';
+  $form['field_ten_cua_ban']['widget'][0]['value']['#attributes']['placeholder'][] ='Tên bạn';
+
+  // Submit
+  $form['actions']['#weight'] = 99;
+  $form['actions']['submit']['#value'] = 'Đăng ký';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-theme-submit';
+  
+}
