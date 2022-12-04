@@ -1691,7 +1691,7 @@ body {
 #sidebar-container.sidebar-expanded .list-group .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start {
   height: 50px;
 }
-#sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start:hover, #sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start.active{
+#sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start:hover, #sidebar-container.sidebar-expanded .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start.active, #sidebar-container.sidebar-collapsed .bg-dark.list-group-item.list-group-item-action.flex-column.align-items-start.active{
   background: #fff;
 }
 #sidebar-container .active{
@@ -1724,6 +1724,14 @@ font-family: FontAwesome;
 display: inline;
 text-align: right;
 padding-left: 10px;
+}
+
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .collapsed.submenu-icon::after {
+  content: " \f107";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
 }
 /* Opened submenu icon */
 #sidebar-container .list-group .list-group-item.collapsed .submenu-icon::after {
