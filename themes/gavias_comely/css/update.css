@@ -2380,3 +2380,39 @@ margin-top: 20px;
 .dang-ky-khoa-hoc-page .title-course .box-content>p{
   margin-bottom: 0;
 }
+
+.gbb-row .bb-inner{
+	padding-top: 30px;
+  	padding-bottom: 30px;
+}
+.box-categories-wordbench .gsc-tab-views.style-1 .list-links-tabs.clearfix:before, .box-categories-wordbench .gsc-tab-views.style-1 .list-links-tabs.clearfix:after,
+.box-categories-wordbench .views-row.row.clearfix:before,.box-categories-wordbench .views-row.row.clearfix:after{
+	display: none;
+}  
+.box-categories-wordbench select#gsc-tabs-views-ajax-order{
+	font-size: 15px;
+  	padding: 4px 8px;
+}
+.box-categories-wordbench .gsc-tab-views.style-1 .list-links-tabs .nav-tabs > li a{
+	margin: 0 11px;
+    padding: 2px 10px !important;
+    text-transform: none;
+  	font-weight: 400;
+}
+.box-categories-wordbench .list-links-tabs.clearfix.flex.align-items-center {
+    padding-bottom: 16px;
+}
+
+@media (min-width: 1200px){
+  .container {
+    width: 1300px;
+   }
+}
+
+.categories-wordbench .field-content .img-user img{
+    aspect-ratio: 1 !important;
+    width: 80% !important;
+}
+.categories-wordbench .wordbench_desription_detail div{
+    margin-bottom: 9px;
+}
