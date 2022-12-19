@@ -2416,3 +2416,7 @@ margin-top: 20px;
 .categories-wordbench .wordbench_desription_detail div{
     margin-bottom: 9px;
 }
+
+.bookcase-noi-dung-chuong table,.bookcase-noi-dung-chuong table tr,.bookcase-noi-dung-chuong table td{
+  border: 1px solid #EDEDED;
+}

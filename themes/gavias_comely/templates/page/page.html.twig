@@ -22,11 +22,11 @@
 				<div class="row" id="body-row">
 					<div id="sidebar-container" class="sidebar-collapsed d-md-block">
 						<ul class="list-group">
-							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">
-							</li>
+							{# <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">
+							</li> #}
 							<div href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/article' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
-									<img src="{{theme_path}}/images/Files.png" style="flex-grow: 1" alt="">
+									<img src="{{theme_path}}/images/{{current_path == '/article' ? 'iconFileBold.png' : 'iconFileRegular.png'}}" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/article">Articles</a></span>
 									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
@@ -41,7 +41,7 @@
 	
 							<div href="#submenu5" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/bookcase' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
-									<img src="{{theme_path}}/images/Books.png" style="flex-grow: 1" alt="">
+									<img src="{{theme_path}}/images/{{current_path == '/bookcase' ? 'iconBookBold.png' : 'iconBookRegular.png'}}" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/bookcase">Bookcase</a></span>
 									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
@@ -56,7 +56,7 @@
 	
 							<div href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/wordbench' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
-									<img src="{{theme_path}}/images/ChalkboardTeacher.png" style="flex-grow: 1" alt="">
+									<img src="{{theme_path}}/images/{{current_path == '/wordbench' ? 'iconWordbenchBold.png' : 'iconWordbenchRegular.png'}}" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8"><a href="/wordbench">Wordbench</a></span>
 									<span class="submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>

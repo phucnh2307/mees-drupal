@@ -770,11 +770,11 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
  $databases['default']['default'] = array (
-  'database' => 'phuc_inventree_test',
+  'database' => 'mees',
   'username' => 'root',
-  'password' => 'q5nT4kSRWaR2KrH6GYK5PNDrtbkh5dcJYBYHwC48Pz8dDjSGTVtD5xrD',
+  'password' => '',
   'prefix' => '',
-  'host' => 'adminer.aegona.work',
+  'host' => 'localhost',
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
