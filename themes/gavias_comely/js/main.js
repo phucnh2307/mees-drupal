@@ -459,12 +459,12 @@ jQuery(document).ready(function () {
           if ($(this).position().top <= scrollDistance) {
               $('.muc-luc table tbody tr td.active').removeClass('active');
               $('.muc-luc table tbody tr td').eq(i).addClass('active');
-              console.log('aaaaa');
           }
       });
   }).scroll();
 
   $(document).ready(function(){
+    $('.categories-bookcase-book ul li:first-of-type').addClass('active');
     // Hide submenus
     $('#body-row .collapse').collapse('hide'); 
     
@@ -486,4 +486,21 @@ jQuery(document).ready(function () {
         $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
     }
     });
+    
+    $('.categories-bookcase-book .bookcase-chuong ul li').live('click', function() 
+    {
+        var index =  $(this).index();
+        var parent = $(this).parent('ul');
+        parent.children('li.active').removeClass('active');
+        parent.children('li').eq(index).addClass('active');
+        parent.children('li').each(function(i) {
+          var parentBox = parent.parents('.flex').data('id');
+          if (i == index) {
+            $('.bookcase-category-book-'+parentBox+' .bookcase-noi-dung-chuong ul li.active').removeClass('active');
+            $('.bookcase-category-book-'+parentBox+' .bookcase-noi-dung-chuong ul li').eq(i).addClass('active');
+          }
+          
+        });
+    }); 
+    
 })(jQuery);

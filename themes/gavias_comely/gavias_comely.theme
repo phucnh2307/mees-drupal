@@ -65,6 +65,9 @@ function gavias_comely_preprocess_page(&$variables) {
   $variables['theme_path'] = $base_url . '/' . $theme_path;
   $variables['base_url'] = $base_url;
 
+  $variables['category_param']=$keys = \Drupal::request()->get('category');
+  $current_path = \Drupal::service('path.current')->getPath();
+  $variables['current_path'] = \Drupal::service('path_alias.manager')->getAliasByPath($current_path);
 }
 
 function gavias_comely_preprocess_image(&$variables) {

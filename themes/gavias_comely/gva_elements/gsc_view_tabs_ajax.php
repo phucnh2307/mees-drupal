@@ -103,11 +103,24 @@ if(!class_exists('gsc_view_tabs_ajax')):
          $_id = gavias_blockbuilder_makeid();
           ob_start();
          ?>
-         
+         <?php
+            global $base_url;
+            $category_param = \Drupal::request()->get('category');
+            $sort_by_param = \Drupal::request()->get('sort_by');
+            $current_path = \Drupal::service('path.current')->getPath();
+            $current_path = $base_url.\Drupal::service('path_alias.manager')->getAliasByPath($current_path);
+         ?>
          <div class="gsc-tab-views block widget gsc-tabs-views-ajax <?php echo $el_class ?>" <?php print gavias_print_animate_aos($animate) ?>>  
             <div class="block-content">
-               <div class="list-links-tabs clearfix">
+               <div class="list-links-tabs clearfix flex align-items-center " style="justify-content: space-between;">
+                     <div class="flex align-items-center " style="flex-basis: 240px;gap:10px">
+                        <span>Sắp xếp theo:</span> <select name="orderBy" id="gsc-tabs-views-ajax-order" >
+                                          <option value="<?php echo $current_path ?>?category=<?php echo $category_param ?>&sort_by=created&sort_order=DESC" <?php echo $sort_by_param=='created' ? 'selected' :'' ?>>Mới đăng</option>
+                                          <option value="<?php echo $current_path ?>?category=<?php echo $category_param ?>&sort_by=viewed&sort_order=DESC"  <?php echo $sort_by_param=='viewed' ? 'selected' :'' ?>>Xem nhiều</option>
+                                       </select>
+                     </div>
                   <ul class="nav nav-tabs links-ajax" data-load="ajax">
+                     
                      <?php 
                      for($i=1; $i<=10; $i++){ 
                         $title = "title_{$i}";
@@ -169,6 +182,12 @@ if(!class_exists('gsc_view_tabs_ajax')):
                </div>
             </div>   
          </div>   
+         <script>
+            var e = document.getElementById("gsc-tabs-views-ajax-order");
+            e.addEventListener('change', (event) => {
+               window.location.href = event.target.value;
+               });
+         </script>
          <?php return ob_get_clean();
       }
 

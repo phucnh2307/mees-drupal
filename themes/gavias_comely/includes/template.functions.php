@@ -1,4 +1,6 @@
 <?php
+use Drupal\Core\Url;
+
 function gavias_comely_base_url(){
   global $base_url;
   $theme_path = drupal_get_path('theme', 'gavias_comely');
@@ -12,9 +14,11 @@ function gavias_comely_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
-  if ($variables['node']->getType() == 'article' || $variables['node']->getType() == 'wordbench') {
+  if ($variables['node']->getType() == 'article' || $variables['node']->getType() == 'wordbench' || $variables['node']->getType() == 'bookcase') {
       $node = $variables['node'];
-      $variables['comment_count'] = $node->get('comment')->comment_count;
+      if ($variables['node']->getType() != 'bookcase') {
+        $variables['comment_count'] = $node->get('comment')->comment_count;
+      }
       $post_format = 'standard';
       try{
          $field_post_format = $node->get('field_post_format');
@@ -54,6 +58,44 @@ function gavias_comely_preprocess_node(&$variables) {
       }
       $variables['gva_iframe'] = $iframe;
       $variables['post_format'] = $post_format;
+
+      if ($variables['node']->getType() == 'bookcase') {
+        $base_path = Url::fromRoute('<front>', [], ['absolute' => TRUE])->toString();
+        $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        $variables['nid'] = $node->id();
+        $variables['nodes'] = \Drupal::entityQuery('node')
+          ->condition('type', 'bookcase')->condition('langcode', $langcode)
+          ->sort('created', 'DESC')->execute();
+        $i = 0;
+        $position = 0;
+        $arrnode = [];
+        $variables['arrtitle'] = [];
+        $variables['urlNewArticle'] = [];
+        foreach ($variables['nodes'] as $key => $value) {
+          $arrnode[$i] = $value;
+          if ($value == $variables['nid']) {
+            $position = $i;
+          }
+          $i++;
+        }
+        $i=0;
+        $variables['nodesArticle'] =  \Drupal\node\Entity\Node::loadMultiple($variables['nodes']);
+        foreach ($variables['nodesArticle'] as $key => $value) {
+          $value = $value->getTranslation($langcode);
+          $variables['urlNewArticle'][$i] = $value->toUrl();
+          $variables['arrtitle'][$i] = $value->label();
+          $i++;
+        }
+        if ($position > 0) {
+          $variables['idaf'] = $base_path.\Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$arrnode[$position - 1]);
+          $variables['titleaf'] = $variables['arrtitle'][$position - 1];
+        }
+        if ($position < count($arrnode) -1 ) {
+          $variables['idbf'] = $base_path.\Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$arrnode[$position + 1]);
+          $variables['titlebf'] = $variables['arrtitle'][$position + 1];
+        }
+
+      }
   }
 }
 

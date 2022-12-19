@@ -17,73 +17,78 @@
 		{% endif %}
 		<div class="flex">
 			{% if page.sidebar_left_article %}
+				<style>
+					#sidebar-container{
+						display: block;
+					}
+				</style>
+			{% endif %}
 				<div class="row" id="body-row">
-					<div id="sidebar-container" class="sidebar-expanded d-md-block">
+					<div id="sidebar-container" class="sidebar-collapsed d-md-block">
 						<ul class="list-group">
-							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">
 							</li>
-										
-							<a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<div href="#submenu1" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/article' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Files.png" style="flex-grow: 1" alt="">
-									<span class="menu-collapsed" style="flex-grow: 8">Articles</span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="menu-collapsed" style="flex-grow: 8"><a href="/article">Articles</a></span>
+									<span href="#submenu1" data-toggle="collapse" aria-expanded="false" class="{{current_path == '/article' ? 'active' : ''}} submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
-							</a>
-							<div id='submenu1' class="collapse sidebar-submenu">
+							</div>
+							<div id='submenu1' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_article %}
-									<a href="{{base_url}}/article?category={{item.id}}" class="list-group-item list-group-item-action ">
+									<a href="{{base_url}}/article?category={{item.id}}" class="list-group-item list-group-item-action  {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
 									</a>
 								{% endfor %}
 							</div>
 	
-							<a href="#submenu5" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<div href="#submenu5" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/bookcase' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Books.png" style="flex-grow: 1" alt="">
-									<span class="menu-collapsed" style="flex-grow: 8">Bookcase</span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="menu-collapsed" style="flex-grow: 8"><a href="/bookcase">Bookcase</a></span>
+									<span href="#submenu5" data-toggle="collapse" aria-expanded="false" class="{{current_path == '/bookcase' ? 'active' : ''}} submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
-							</a>
-							<div id='submenu5' class="collapse sidebar-submenu">
+							</div>
+							<div id='submenu5' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_bookcase %}
-									<a href="{{base_url}}/bookcase?category={{item.id}}" class="list-group-item list-group-item-action ">
+									<a href="{{base_url}}/bookcase?category={{item.id}}" class="list-group-item list-group-item-action {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
 									</a>
 								{% endfor %}
 							</div>
 	
-							<a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<div href="#submenu2" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/wordbench' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/ChalkboardTeacher.png" style="flex-grow: 1" alt="">
-									<span class="menu-collapsed" style="flex-grow: 8">Wordbench</span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span class="menu-collapsed" style="flex-grow: 8"><a href="/wordbench">Wordbench</a></span>
+									<span href="#submenu2" data-toggle="collapse" aria-expanded="false" class="{{current_path == '/wordbench' ? 'active' : ''}} submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
-							</a>
-							<div id='submenu2' class="collapse sidebar-submenu">
+							</div>
+							<div id='submenu2' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_wordbench %}
-									<a href="{{base_url}}/wordbench?category={{item.id}}" class="list-group-item list-group-item-action ">
+									<a href="{{base_url}}/wordbench?category={{item.id}}" class="list-group-item list-group-item-action {{category_param == item.id ? 'active':''}}">
 										<span class="menu-collapsed">{{item.name}}</span>
 									</a>
 								{% endfor %}
 							</div>
 							<hr>
 							
-							<a href="#submenu3" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<a href="#submenu3" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/faqs' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Files.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 9">FAQs</span>
 								</div>
 							</a>
 	
-							<a href="#submenu4" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<a href="#submenu4" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/about-us' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Star.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8">About Us</span>
-									<span class="submenu-icon ml-auto" style="flex-grow: 1"></span>
+									<span href="#submenu4" data-toggle="collapse" aria-expanded="false" class="{{current_path == '/about-us' ? 'active' : ''}} submenu-icon ml-auto d-none" style="flex-grow: 1"></span>
 								</div>
 							</a>
-							<div id='submenu4' class="collapse sidebar-submenu">
+							<div id='submenu4' class="collapse sidebar-submenu d-none">
 								{% for item in taxonomy_wordbench %}
 									<a href="{{base_url}}/article?category={{item.id}}" class="list-group-item list-group-item-action ">
 										<span class="menu-collapsed">{{item.name}}</span>
@@ -92,15 +97,15 @@
 							</div>
 						</ul>
 						<ul class="list-group">
-							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">NETWORK SITES
+							<li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed d-none">NETWORK SITES
 							</li>
-							<a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<a href="#submenu1" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/courses' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/PenNib.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8">Courses</span>
 								</div>
 							</a>
-							<a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+							<a href="#submenu1" data-toggle="" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start {{current_path == '/factory-automation' ? 'active' : ''}}">
 								<div class="d-flex w-100 justify-content-start align-items-center">
 									<img src="{{theme_path}}/images/Cpu.png" style="flex-grow: 1" alt="">
 									<span class="menu-collapsed" style="flex-grow: 8">Factory Automation</span>
@@ -109,7 +114,6 @@
 						</ul>
 					</div>
 				</div>
-			{% endif %}
 			<div style="width:100%">
 				<div role="main" class="main main-page">
 				

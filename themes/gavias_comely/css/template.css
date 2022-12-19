@@ -10846,7 +10846,7 @@ div.resizable-textarea textarea {
   margin-left: -15px !important;
   margin-right: -15px !important;
 }
-.contact-message-form #edit-name, .contact-message-form #edit-mail, .contact-message-form .js-form-item-mail {
+.contact-message-form #edit-name, .contact-message-form #edit-mail {
   height: 45px;
   line-height: 45px;
   background: none;
@@ -11516,4 +11516,20 @@ div.resizable-textarea textarea {
 }
 .gavias_customize_form .form-group.action input#gavias_customize_reset {
   background: #f0ad4e;
+}
+.path-user .breadcrumb-content-inner .gva-breadcrumb-content .gva-block-breadcrumb .breadcrumb-style{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.path-user .breadcrumb-content-inner .gva-breadcrumb-content .page-title{
+  display: none;
+}
+.path-user .block.block-system-breadcrumb-block{
+  margin-bottom: 0;
+}
+.path-user #user-login-form, #user-register-form, #user-pass{
+  padding-top: 0;
+  margin-top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
