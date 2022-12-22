@@ -16,6 +16,12 @@ if(!class_exists('gsc_accordion_menu')):
                   'class'     => 'display-admin'
                ),
                array(
+                  'id'     => 'part_right',
+                  'type'      => 'text',
+                  'title'  => t('Part right'),
+                  'class'     => 'display-admin'
+               ),
+               array(
                   'id'     => 'title',
                   'type'      => 'text',
                   'title'  => t('Title'),
@@ -64,6 +70,7 @@ if(!class_exists('gsc_accordion_menu')):
          global $tabs_array, $tabs_count;
          extract(shortcode_atts(array(
             'part'      => '',
+            'part_right'=> '',
             'title'     => '',
             'style'     => '',
             'tabs'      => '',
@@ -87,7 +94,9 @@ if(!class_exists('gsc_accordion_menu')):
 
          <div class="gsc-accordion">
             <div style="margin-bottom: 0px;" class="panel-group <?php print $classes ?>" id="<?php print $_id; ?>" role="tablist" aria-multiselectable="true">
-            <h4 style="font-size: 16px; background: #FFE7E1;margin-top: 0px; margin-bottom: 0px; padding: 10px; font-weight: 400; font-size: 16px;"><?php print $part ?></h4>
+            <h4 style="font-size: 16px; background: #FFE7E1;margin-top: 0px; margin-bottom: 0px; padding: 17px 10px; font-weight: 400; font-size: 16px; display:flex;justify-content: space-between;"><?php print $part ?>
+               <b style="font-size:14px"><?php print $part_right; ?></b>
+            </h4>
               <?php
                if( is_array( $tabs ) ){
                   $i=0;
@@ -98,8 +107,8 @@ if(!class_exists('gsc_accordion_menu')):
                      <div class="panel-heading" role="tab">
                      
                         <h4 class="panel-title-1" style="padding-right: 0px;">
-                          <a style="background: #F7F7F7; padding: 5px 10px;" role="button" data-toggle="collapse" class="<?php print ($i == 1) ? '' : 'collapsed' ?>" data-parent="#<?php print $_id; ?>" href="#<?php print ($_id . '-' . $i) ?>" aria-expanded="true" aria-controls="collapseOne">
-                            <div style="margin-left: 20px; margin-top: 10px; font-weight: 300;font-family: 'roboto',sans-serif;"><?php print $tab['title'] ?></div>
+                          <a style="background: #F7F7F7; padding: 12px 10px;" role="button" data-toggle="collapse" class="accordion-title <?php print ($i == 1) ? '' : 'collapsed' ?>" data-parent="#<?php print $_id; ?>" href="#<?php print ($_id . '-' . $i) ?>" aria-expanded="true" aria-controls="collapseOne">
+                            <div style="margin-left: 30px; font-weight: 300;font-family: 'roboto',sans-serif;"><?php print $tab['title'] ?></div>
                           </a>
                         </h4>
                      </div>

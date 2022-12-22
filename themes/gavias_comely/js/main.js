@@ -34,7 +34,7 @@
         $('.init-carousel-owl').each(function(){
           var items = $(this).data('items') ? $(this).data('items') : 5;
           var items_lg = $(this).data('items_lg') ? $(this).data('items_lg') : 4;
-          var items_md = $(this).data('items_md') ? $(this).data('items_md') : 3;
+          var items_md = $(this).data('items_md') ? $(this).data('items_md') : 3;console.log($(this).data('items'));
           var items_sm = $(this).data('items_sm') ? $(this).data('items_sm') : 2;
           var items_xs = $(this).data('items_xs') ? $(this).data('items_xs') : 1;
           var loop = $(this).data('loop') ? $(this).data('loop') : true;
