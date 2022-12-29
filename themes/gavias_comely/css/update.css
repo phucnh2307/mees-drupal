@@ -2754,3 +2754,9 @@ margin-top: 20px;
   right: 0;
   top: 0;
 }
+
+@media (min-width: 1500px){
+  .box-categories-wordbench .container {
+    width: 1500px !important;
+   }
+}
