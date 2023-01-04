@@ -110,7 +110,7 @@ if(!class_exists('gsc_box_image_content_v2')):
             <div class="content">
                <div class="box-image-customize">
                   <?php if($title){ ?><?php if($link){ ?><a <?php print $target ?> href="<?php print $link ?>"><?php } ?>
-                  <img style="float: left;  width: 100%; height: 100%;" src="<?php print $background ?>" alt="<?php print $title ?>" /><?php if($link){ ?></a><?php } ?>
+                  <img style="float: left;  width: 100%; height: 360px;" src="<?php print $background ?>" alt="<?php print $title ?>" /><?php if($link){ ?></a><?php } ?>
                </div> 
                
                <h4 class="title" style="float: left;"><?php print $title ?></h4><?php } ?>   

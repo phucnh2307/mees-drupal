@@ -836,7 +836,7 @@ span.post-tag a {
 }
 .category-article .article-node-1 .item .views-field{
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 .category-article .article-node-4 h2{
@@ -851,7 +851,7 @@ span.post-tag a {
 }
 .category-article .article-node-4 .views-field.views-field-nothing{
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
+  border-radius: 3px;
   margin-bottom: 30px;
 }
 .category-article .article-node-4 p{
@@ -899,7 +899,7 @@ span.post-tag a {
   content: "";
   background-image: linear-gradient(to top, black, transparent);
   width: 100%;
-  height: 100%;
+  height: 360px;
   z-index: 1;
   top: 0;
   left: 0;
@@ -910,18 +910,19 @@ span.post-tag a {
   position: absolute;
   left: 30px;
   color: #F6C142;
-  bottom: 100px;
+  bottom: 50px;
   font-weight: 700;
   font-size: 16px;
   line-height: 100%;
   z-index: 2;
   width: 90%;
+  text-transform: uppercase;
 }
 .title-videos-article{
   box-sizing: border-box;
   position: absolute;
   left: 30px;
-  bottom: 30px;
+  bottom: -20px;
   z-index: 2;
   font-weight: 600;
   font-size: 24px;
@@ -934,7 +935,7 @@ span.post-tag a {
   box-sizing: border-box;
   position: absolute;
   left: 30px;
-  bottom: 30px;
+  bottom: -20px;
   z-index: 2;
   font-weight: 600;
   font-size: 18px;
@@ -986,8 +987,8 @@ span.post-tag a {
   color: #3B3B3B;
 }
 .categories-wordbench .wordbench_desription_detail .wordbench_name_author{
-  color: #E6765C;
-  font-weight: bold;
+  color: #FF6A47;
+  font-weight: 500;
 }
 .categories-wordbench .wordbench_desription_detail div{
   margin-bottom: 13px;
@@ -1339,7 +1340,7 @@ ul.inline > li{
  width: 120px;
 }
 .node--type-wordbench .breadcrumb-content-inner .gva-breadcrumb-content .gva-block-breadcrumb .breadcrumb-style{
- padding: 40px 0 0 ;
+ padding: 20px 0 0 ;
  margin-bottom: 0;
 }
 .node--type-wordbench .block-views-blockpost-other-block-1 .post-block, .node--type-wordbench .block-views-blockwordbench-block-2 .post-block{
@@ -1498,7 +1499,7 @@ margin-top: 20px;
 .node--type-wordbench .block-views-blockwordbench-block-2 .post-style-list.small .post-title a {
   font-size: 14px;
   margin-top: -5px;
-  text-transform: none;
+  text-transform: uppercase;
   font-weight: none !important;
   color:  #3B3B3B;
 }
@@ -1529,6 +1530,7 @@ legend {
   font-weight: bold;
   color: #4BAFEA;
   margin-bottom: 5px !important;
+  text-transform: uppercase;
 }
 .node--type-wordbench .block-views-blockwordbench-block-2 .post-style-list.small .post-image {
   width: 35%;
@@ -1554,7 +1556,7 @@ legend {
 .node--type-wordbench .block-views-blockwordbench-block-2 .post-style-list.small .post-title a {
   font-size: 14px;
   margin-top: -5px;
-  text-transform: none;
+  text-transform: uppercase;
   font-weight: none !important;
   color:  #3B3B3B;
 }
@@ -1564,6 +1566,7 @@ legend {
   font-weight: bold;
   color: #4BAFEA;
   margin-bottom: 5px !important;
+  text-transform: uppercase;
 }
 
 /* workbench */
@@ -2112,7 +2115,7 @@ padding-left: 10px;
   border-bottom: 2px solid #E6765C;
 }
 .categories-bookcase-book .item .field-content > .flex{
-  gap: 20px;
+  gap: 0;
 }
 .categories-bookcase-book .bookcase-title a{
   font-weight: 400;
@@ -2151,6 +2154,7 @@ padding-left: 10px;
 }
 .categories-bookcase-book .bookcase-chuong{
   flex: 0 0 33%;
+  padding: 0 0 0 20px;
 }
 .categories-bookcase-book ul{
   list-style-type: none;
@@ -2616,6 +2620,12 @@ margin-top: 20px;
 	padding-top: 30px;
   	padding-bottom: 30px;
 }
+
+.margin-top-1.gbb-row.bg-size-cover>.bb-inner{
+	padding-top: 60px !important;
+  	padding-bottom: 60px !important;
+}
+
 .box-categories-wordbench .gsc-tab-views.style-1 .list-links-tabs.clearfix:before, .box-categories-wordbench .gsc-tab-views.style-1 .list-links-tabs.clearfix:after,
 .box-categories-wordbench .views-row.row.clearfix:before,.box-categories-wordbench .views-row.row.clearfix:after{
 	display: none;
@@ -2757,6 +2767,36 @@ margin-top: 20px;
 
 @media (min-width: 1500px){
   .box-categories-wordbench .container {
-    width: 1500px !important;
+    width: 100% !important;
+    padding: 0 66px;
    }
+}
+
+.list-group-item{
+  padding: 12px 15px;
+}
+
+#footer .footer-first{
+  width: auto;
+}
+
+.box-categories-wordbench{
+  background: #FAFAFA;
+}
+
+.bookcase-noi-dung-chuong{
+  background: #FFFFFF;
+  border-top: 0.5px solid #BCBCBC;
+  border-bottom: 0.5px solid #BCBCBC;
+  padding: 20px;
+}
+
+.node--type-wordbench .field.field--name-body.field--type-text-with-summary.field--label-hidden.field__item{
+  font-weight: 500;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #FF6A47;
+  margin-bottom: 58px;
+}
+.node--type-wordbench .post-content{
+  background-color: transparent;
 }

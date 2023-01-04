@@ -41,6 +41,79 @@
 
     {% if customize_css %}
       <style type="text/css">
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Thin_0.ttf') format('truetype');
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Italic_1.ttf') format('truetype');
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 300;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Light_3.ttf') format('truetype');
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Regular_2.ttf') format('truetype');
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 500;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Medium_0.ttf') format('truetype');
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 600;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Bold_2.ttf') format('truetype');
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 700;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Bold_2.ttf') format('truetype');
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 800;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Black_2.ttf') format('truetype');
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 900;
+        font-display: swap;
+        src: url('{{theme_path}}/fonts/lato/Lato-Black_2.ttf') format('truetype');
+      }
+
+
         {{ customize_css|raw }}
       </style>
     {% endif %}
